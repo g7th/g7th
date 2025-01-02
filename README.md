@@ -1,6 +1,6 @@
 `#` here follows a comment `#` must be the first non whitespace character in a line
 
-**--------------------------------- Intro -----------------------------**
+**----------------------------------- Intro ------------------------------**
 
 `G7th` is an objectoriented procedural programming language that took the
 original minimalist stack language design of Forth as developed by Charles
