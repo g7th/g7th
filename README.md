@@ -1,6 +1,6 @@
 `#` here follows a comment `#` must be the first non whitespace character in a line
 
-**------------------------------------ Intro -----------------------------------**
+**--------------------------------- Intro -----------------------------**
 
 `G7th` is an objectoriented procedural programming language that took the
 original minimalist stack language design of Forth as developed by Charles
@@ -34,7 +34,7 @@ So the TOS goes never out of sight on the screen even if there are many entries
 on the stack.  
 In `g7th`, everything is either a word (item) or a value.
 
-**------------------------------------ Braces ----------------------------------**
+**--------------------------------- Braces -------------------------------**
 
 ```
 (*is a comment in line*) and can appear anywhere in a line
@@ -43,7 +43,7 @@ In `g7th`, everything is either a word (item) or a value.
 [] definition of and access to an array or a matrix
 ```
 
-**---------------------------------- Arithmetic --------------------------------**
+**------------------------------- Arithmetic -----------------------------**
 
 All calculations expects at least one item on the data stack.
 
@@ -94,7 +94,7 @@ deg                 (*Deg degrees*)
 0 tanh . cr	    (*0*)
 ```
 
-**--------------------------------- Data Stack ---------------------------------**
+**------------------------------ Data Stack ------------------------------**
 
 Naturally, as we work with the stack, we'll need some useful methods:
 
@@ -125,7 +125,7 @@ The next manipulation methods should look vaguely familiar:
 clst
 ```
 
-**--------------------------------- Return Stack -------------------------------**
+**------------------------------ Return Stack ----------------------------**
 
 The return stack has no function. It only exists for backward compatibility.
 It can be used as interim storage for data from and to the data stack.  
@@ -133,7 +133,7 @@ Especially `loop` or any other words doesn't use the return stack for execution.
 You get the state of nested loops with the word `loop_indices`.  
 After the program start of `g7th` you find the arguments on the return stack.
 
-**-------------------------------- Defining Words ------------------------------**
+**----------------------------- Defining Words ---------------------------**
 
 The `:` word sets `g7th` into compile mode until it sees the `;` word.
 
@@ -144,7 +144,7 @@ The `:` word sets `g7th` into compile mode until it sees the `;` word.
 While interactively entering in compile mode the prompt is changed from `ok>`
 to `>`.
 
----------------------------------- Conditionals ------------------------------**
+---------------------------------- Conditionals ---------------------------**
 
 ```
 42 42 ==    (*true*)
@@ -167,7 +167,7 @@ cr
 20 >64?     (*20 is less than 64!*)
 ```
 
-**-------------------------------- Control structures --------------------------**
+**----------------------------- Control structures -----------------------**
 
 `do`
 
@@ -250,7 +250,7 @@ for
 each
 ```
 
-**---------------------------- Variables and Memory ----------------------------**
+**------------------------- Variables and Memory -------------------------**
 
 Use `variable` to declare `age` to be a variable.
 
@@ -291,7 +291,7 @@ This space can be accessed with the corresponding index of the data and
 2 cell			 	 (*384*)
 ```
 
-**----------------------------------- Arrays -----------------------------------**
+**-------------------------------- Arrays --------------------------------**
 
 ```
 variable mynumbers
@@ -308,7 +308,7 @@ mynumbers @                 (*│   64 9001 1337 │*)
 
 ```
 
-**------------------------- Floating Point Operations --------------------------**
+**---------------------- Floating Point Operations -----------------------**
 
 `G7th` attempts to perform a calculation with the least loss of accuracy.
 
@@ -330,7 +330,7 @@ myfloatingvar decr        (*3.4*)
 myfloatingvar incr        (*4.4*)
 ```
 
-**----------------------------- Number Conversion ------------------------------**
+**-------------------------- Number Conversion ---------------------------**
 
 ```
 decimal 12345
@@ -346,7 +346,7 @@ decimal
 "245" >num .                    (*245*)
 ```
 
-**---------------------------- Vectors and Matrices  ---------------------------**
+**------------------------- Vectors and Matrices  ------------------------**
 
 the stack after `*`:
 
@@ -357,13 +357,13 @@ the stack after `*`:
                                 (*└    ┘*)
 ```
 
-**------------------------------- Complex Numbers  -----------------------------**
+**---------------------------- Complex Numbers  --------------------------**
 
 ```
 (30, 5i) (6, 1i) *              (*(175, 60i)*)
 ```
 
-**------------------------------ String Functions  -----------------------------**
+**--------------------------- String Functions  --------------------------**
 
 Every word that leaves a string on the stack ends with a `$`.
 
@@ -381,7 +381,7 @@ dup 10 5 mid$ .                 (*brown*)
 len .                           (*2*)
 ```
 
-**----------------------------------- Printing ---------------------------------**
+**-------------------------------- Printing ------------------------------**
 
 ```
 'a' .                            (*a*)
@@ -393,7 +393,7 @@ space
 cr
 ```
 
-**--------------------------------- Final Notes --------------------------------**
+**------------------------------ Final Notes -----------------------------**
 
 There's a word to clear the stack.  
 Entering a non-existent word keeps the current stack.
