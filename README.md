@@ -144,7 +144,7 @@ The `:` word sets `g7th` into compile mode until it sees the `;` word.
 While interactively entering in compile mode the prompt is changed from `ok>`
 to `>`.
 
----------------------------------- Conditionals ---------------------------**
+**------------------------------- Conditionals ---------------------------**
 
 ```
 42 42 ==    (*true*)
