@@ -12,7 +12,7 @@ use bigdecimal::{BigDecimal, One, Zero};
 use bigdecimal::num_bigint::Sign;
 use once_cell::sync::Lazy;
 use std::cell::RefCell;
-use std::cmp::min;
+use std::cmp::{min, max};
 use std::collections::{HashMap, HashSet};
 
 use std::env;
@@ -692,6 +692,14 @@ impl Vocabulary {
         }));
         self.ins_core(core!("flog",             |dh: &mut DataHolder, _v: &Value| {
             flog!(pop_str!(dh));
+        }));
+
+        self.ins_core(core!("csv",              |dh: &mut DataHolder, _v: &Value| {
+            let word = pop_str!(dh);
+            let rslt: &mut Vec<String> = &mut Vec::with_capacity(8);
+            let row_cnt = make_str_matrix!(word, rslt);
+            let mat = DMatrix::from_row_slice(row_cnt, rslt.len() / max(row_cnt, 1), &rslt);
+            vpush!(dh, v!(mat));
         }));
 ///////////////////////////////////////////////////////////////////////////////////////////
         self.ins_core(immediate!("constant",    |dh: &mut DataHolder, v: &Value| {

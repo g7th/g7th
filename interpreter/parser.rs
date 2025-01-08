@@ -204,7 +204,7 @@ impl Parser {
         None
     }
 
-    fn parse_csv(mut try_parse: bool, line: &str) -> Result<Vec<f64>, Vec<String>> {
+    pub(crate) fn parse_csv(mut try_parse: bool, line: &str) -> Result<Vec<f64>, Vec<String>> {
         let mut rslt: Vec<f64> = Vec::with_capacity(8);
         let mut err: Vec<String> = Vec::with_capacity(8);
 'error: for s in line.split(',').into_iter() {
